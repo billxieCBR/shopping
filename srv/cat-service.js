@@ -4,8 +4,6 @@ class CatalogService extends cds.ApplicationService { init(){
 
   const { Goods } = this.entities ('sap.capire.shopping')
 
-
-
   return super.init()
 }}
 

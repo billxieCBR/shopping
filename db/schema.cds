@@ -3,7 +3,7 @@ namespace sap.capire.shopping;
 
 entity Goods : managed {
     key ID : Integer;
-     name       : String(10);
+    name       : String(100);
     price        : String(15);
     pieces       : String(15);
     vat      : String(15);
@@ -35,3 +35,4 @@ entity Genres : sap.common.CodeList {
 }
 
 */
+cds 
