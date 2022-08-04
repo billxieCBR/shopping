@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Shopping </title>
+    <link rel="stylesheet" href="https://unpkg.com/primitive-ui/dist/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+    <style>
+        .hovering tr:hover td { color:cyan; background: #123; cursor: pointer; }
+        .rating-stars { color:teal }
+        .succeeded { color:teal }
+        .failed { color:red }
+        .user {text-align: end; color: grey;}
+    </style>
+</head>
+
+<body class="small-container", style="margin-top: 70px;">
+<div id='app'>
+  
+
+    <h1> Shopping Lists </h1>
+
+    <input type="text" placeholder="Search..." @input="search">
+
+    <table id='goods' class="hovering">
+        <thead>
+            <th> Name </th>
+            <th> price </th>
+            <th> pieces </th>
+            <th> vat </th>
+        </thead>
+        <tr v-for="goods in list" v-bind:id="goods.ID">
+            <td>{{ goods.name }}</td>
+            <td>{{ goods.price }}</td>
+            <td>{{ goods.pieces }}</td>
+            <td>{{ goods.vat }}</td>
+          
+        </tr>
+    </table>
+    <form @submit.prevent="submitOrder" style="float:right; display:flex; flex-direction:row-reverse">
+       
+        <input type="submit" value="Order:" class="muted-button">
+    </form>
+   
+</div>
+</body>
+
+<script src="app.js"></script>
+</html>
